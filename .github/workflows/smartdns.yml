@@ -36,7 +36,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: smartdns-release
-          path: /tmp/smartdns/dnsmasq-china-list-master/
+          path: /dnsmasq-china-list-master/
                 /tmp/smartdns/dnsmasq-china-list-master/
 
       - name: Delete workflow runs
