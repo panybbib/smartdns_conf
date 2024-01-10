@@ -24,7 +24,7 @@ jobs:
       - name: Download file
         run: |
           sudo mkdir -p /tmp/smartdns
-          sudo chown $USER:$GROUPS /workdir
+          sudo chown $USER:$GROUPS /tmp/smartdns
           wget https://github.com/felixonmars/dnsmasq-china-list/archive/refs/heads/master.zip -O /tmp/smartdns/master.zip
           sudo unzip /tmp/smartdns/master.zip -d /tmp/smartdns/
       - name: Convert server to nameserver
