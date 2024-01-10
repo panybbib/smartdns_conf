@@ -26,11 +26,11 @@ jobs:
           sudo mkdir -p /tmp/smartdns
           wget https://github.com/felixonmars/dnsmasq-china-list/archive/refs/heads/master.zip -O /tmp/smartdns/master.zip
           ls /tmp/smartdns/
-          unzip /tmp/smartdns/master.zip -d /tmp/smartdns/
+          sudo unzip /tmp/smartdns/master.zip -d /tmp/smartdns/
       - name: Convert server to nameserver
         run: |
           cd /tmp/smartdns/dnsmasq-china-list-master
-          make smartdns SERVER=cn
+          sudo make smartdns SERVER=cn
       - name: Upload to release
         uses: actions/upload-artifact@v4
         with:
