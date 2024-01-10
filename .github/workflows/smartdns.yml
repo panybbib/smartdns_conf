@@ -33,10 +33,13 @@ jobs:
           sudo make smartdns SERVER=cn
           ls /tmp/smartdns/dnsmasq-china-list-master/
       - name: Upload to release
-        uses: actions/upload-artifact@v4
+        uses: softprops/action-gh-release@v0.1.15
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          name: smartdns-release
-          path: /tmp/smartdns/dnsmasq-china-list-master/*.raw.txt
+          tag_name: smartdns-release
+          body_path: release.txt
+          files: /tmp/smartdns/dnsmasq-china-list-master/*.raw.txt
 
       - name: Delete workflow runs
         uses: pianranjinghong/delete-workflow-runs@main
