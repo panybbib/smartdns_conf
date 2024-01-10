@@ -31,6 +31,7 @@ jobs:
         run: |
           cd /tmp/smartdns/dnsmasq-china-list-master
           sudo make smartdns SERVER=cn
+          ls /tmp/smartdns/dnsmasq-china-list-master/
       - name: Upload to release
         uses: actions/upload-artifact@v4
         with:
