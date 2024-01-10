@@ -1,0 +1,23 @@
+name: SmartDNS
+on:
+  push:
+    branches: [ master ]
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Download file
+        run: |
+          wget https://github.com/felixonmars/dnsmasq-china-list/archive/refs/heads/master.zip -O tmp/smartdns/master.zip
+          unzip tmp/smartdns/master.zip -d tmp/smartdns/
+      - name: Convert server to nameserver
+        run: |
+          cd /tmp/smartdns
+          make smartdns SERVER=cn
+      - name: Upload to release
+        uses: actions/upload-artifact@v2
+        with:
+          name: smartdns-release
+          path: tmp/smartdns/
