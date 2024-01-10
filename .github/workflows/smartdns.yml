@@ -15,7 +15,7 @@ jobs:
          bundler-cache: true
       - name: Download file
         run: |
-          git clone  https://github.com/felixonmars/dnsmasq-china-list/master.zip tmp/smartdns
+          git clone  https://github.com/felixonmars/dnsmasq-china-list tmp/smartdns
           unzip tmp/smartdns/master.zip -d tmp/smartdns/
       - name: Convert server to nameserver
         run: |
