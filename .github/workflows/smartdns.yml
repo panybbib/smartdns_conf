@@ -8,14 +8,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
       - uses: ruby/setup-ruby@v1
         with:
          ruby-version: '3.0'
          bundler-cache: true
       - name: Download file
         run: |
-          wget https://github.com/felixonmars/dnsmasq-china-list/archive/refs/heads/master.zip -O tmp/smartdns/master.zip
+          git clone  https://github.com/felixonmars/dnsmasq-china-list/master.zip tmp/smartdns
           unzip tmp/smartdns/master.zip -d tmp/smartdns/
       - name: Convert server to nameserver
         run: |
