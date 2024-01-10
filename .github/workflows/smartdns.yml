@@ -39,6 +39,7 @@ jobs:
         with:
           tag_name: smartdns-release
           files: /tmp/smartdns/dnsmasq-china-list-master/*.raw.txt
+                 /tmp/smartdns/dnsmasq-china-list-master/*.smartdns.conf
 
       - name: Delete workflow runs
         uses: pianranjinghong/delete-workflow-runs@main
