@@ -30,7 +30,7 @@ jobs:
       - name: Convert server to nameserver
         run: |
           cd /tmp/smartdns/dnsmasq-china-list-master
-          sudo make smartdns SERVER=cn
+          sudo make smartdns SERVER=china
       - name: Upload to release
         uses: softprops/action-gh-release@v0.1.15
         env:
