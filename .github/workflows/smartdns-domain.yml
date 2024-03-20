@@ -1,4 +1,4 @@
-name: SmartDNS
+name: SmartDNS-domain
 on:
   schedule:
     - cron: '0 8 * * *'
